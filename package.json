@@ -1,0 +1,26 @@
+{
+  "name": "sampleconversationalai",
+  "version": "1.0.0",
+  "description": "This is for learning purpose",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farookjintha/sampleConversationalAI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farookjintha/sampleConversationalAI/issues"
+  },
+  "homepage": "https://github.com/farookjintha/sampleConversationalAI#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
