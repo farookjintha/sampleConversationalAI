@@ -14,8 +14,9 @@ module.exports = app =>{
         console.log(`POST : Do text query`);
     });
     
-    app.post('/api/df_event_query',(req,res) =>{
-        res.send({'Do' : 'Event Query'});
+    app.post('/api/df_event_query', async (req,res) =>{
+        let responses = await chatbot.eventQuery(req.body.event, req.body.parameters);
+        res.send(responses[0].queryResult);
         console.log(`POST : Do event query`);
     });
 

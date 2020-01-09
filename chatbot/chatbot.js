@@ -2,6 +2,8 @@
 
 const dialogflow = require('dialogflow');
 const config = require('../config/keys');
+
+const structjson = require('./structjson');
 // const privateKeyJSON = require('../config/credentials/botman-c3a4c-0fd682daad87.json'); 
 
 let configCred = {
@@ -32,6 +34,25 @@ module.exports = {
                 payload: {
                     data: parameters
                 }
+            }
+        };
+        
+        let responses = await sessionClient.detectIntent(request);
+        responses = await self.handleAction(responses);
+
+        return responses
+    },
+
+    eventQuery: async function(event, parameters = {}){
+        let self = module.exports;
+
+        const request = {
+            session: sessionPath,
+            queryInput: {
+              event: {
+                name: event,structjson.jsonToStructProto(parameters),
+                languageCode: config.dialogFlowSessionLanguageCode,
+              },
             }
         };
         
