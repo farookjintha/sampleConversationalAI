@@ -3,18 +3,18 @@
 const dialogflow = require('dialogflow');
 const config = require('../config/keys');
 
-const structjson = require('./structjson');
-// const privateKeyJSON = require('../config/credentials/botman-c3a4c-0fd682daad87.json'); 
+const structjson = require('./structJSON');
 
-let configCred = {
-    credentials: {
-        private_key: "privateKey",
-        client_email: "clientEmail"
-    }
-};
+const projectID = config.googleProjectID;
+ 
+const credentials = {
+    private_key: config.googlePrivateKey,
+    client_email: config.googleClientEmail
+    };
 
 
-const sessionClient = new dialogflow.SessionsClient(configCred);
+
+const sessionClient = new dialogflow.SessionsClient(projectID, credentials);
 const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogFlowSessionId);
 
 
@@ -50,7 +50,8 @@ module.exports = {
             session: sessionPath,
             queryInput: {
               event: {
-                name: event,structjson.jsonToStructProto(parameters),
+                name: event,
+                parameters: structjson.jsonToStructProto(parameters),
                 languageCode: config.dialogFlowSessionLanguageCode,
               },
             }
