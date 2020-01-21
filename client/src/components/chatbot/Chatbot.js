@@ -4,6 +4,7 @@ import Cookies from 'universal-cookie';
 import {v4 as uuid} from 'uuid';
 
 import Message from './Message';
+import Card from './Card';
 
 const cookies = new Cookies();
 
@@ -41,6 +42,7 @@ class Chatbot extends Component{
         const res = await axios.post('/api/df_text_query', {text: queryText, userID:cookies.get('userID')});
 
         for(let msg of res.data.fulfillmentMessages){
+            console.log(JSON.stringify(msg));
             says = {
                 speaks: 'bot',
                 msg : msg
@@ -71,10 +73,33 @@ class Chatbot extends Component{
         this.talkInput.focus();
     }
 
+    renderCards(cards){
+        return cards.map((card, i) => <Card key = {i} payload = {card.structValue} />);
+    }
+
+    renderEachMessage(message, i){
+        if(message.msg && message.msg.text && message.msg.text.text){
+            return <Message key = {i} speaks = {message.speaks} text = {message.msg.text.text} />;
+        }else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.cards){
+            return <div key={i}>
+                <div className = "card-panel grey lighten-5 z-depth-1">
+                    <div style = {{overflow : 'hidden'}}>
+                    <a href = "/" className="btn-floating btn-large waves-effect waves-light red">{message.speaks}</a>
+                    </div>
+                    <div style={{ overflow:"auto", overflowY:'scroll'}}>
+                        <div style = {{ height: 300, width: message.msg.payload.fields.cards.listValue.values.length*270}}>
+                            {this.renderCards(message.msg.payload.fields.cards.listValue.values)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
     renderMessages(stateMessages){
         if(stateMessages){
             return stateMessages.map((message, i) => {
-                return <Message key = {i} speaks = {message.speaks} text = {message.msg.text.text} />;
+                return this.renderEachMessage(message, i);
             });
         }else{
             return null;
