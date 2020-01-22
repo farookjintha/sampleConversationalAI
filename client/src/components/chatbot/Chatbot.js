@@ -15,16 +15,22 @@ class Chatbot extends Component{
 
     constructor(props){
         super(props);
-
-        this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
-
+        
         this.state = {
-            messages: []
+            showBot : false,
+            welcomeSent:false,
+            messages: [],
+            botName :"Farooqui"
         };
         if(cookies.get('userID') === undefined){
             cookies.set('userID', uuid(), {path: '/'});
         }
         console.log("Session ID: "+cookies.get('userID'));
+
+
+        this.toggleBot = this.toggleBot.bind(this);
+        this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
+
     }
     
     async df_text_query(queryText){
@@ -64,13 +70,30 @@ class Chatbot extends Component{
         }
     }
 
-    componentDidMount(){
-        this.df_event_query('Welcome');
+    resolveAfterXSeconds(time) {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(time);
+          }, time * 1000);
+        });
+      }
+    async componentDidMount(){
+        if(!this.state.welcomeSent){
+            await this.resolveAfterXSeconds(1.2);
+            this.df_event_query('Welcome');
+            this.setState({ welcomeSent: true});
+        }
+        
     }
 
     componentDidUpdate(){
-        this.messagesEnd.scrollIntoView({ behaviour : "smooth"});
-        this.talkInput.focus();
+        if(this.state.showBot) {
+            this.messagesEnd.scrollIntoView({ behaviour: "smooth" });
+          }
+        if(this.talkInput){
+            this.talkInput.focus();
+        }
+        
     }
 
     renderCards(cards){
@@ -81,18 +104,25 @@ class Chatbot extends Component{
         if(message.msg && message.msg.text && message.msg.text.text){
             return <Message key = {i} speaks = {message.speaks} text = {message.msg.text.text} />;
         }else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.cards){
-            return <div key={i}>
-                <div className = "card-panel grey lighten-5 z-depth-1">
-                    <div style = {{overflow : 'hidden'}}>
-                    <a href = "/" className="btn-floating btn-large waves-effect waves-light red">{message.speaks}</a>
+            return (
+                <div key={i}>
+                  <div className="container">
+                    <div
+                      style={{
+                        height: 200,
+                        width:
+                          message.message.payload.fields.cards.listValue.values.length * 150,
+                        paddingLeft: '12%'
+                      }}
+                    >
+                      {this.renderCards(
+                        message.message.payload.fields.cards.listValue.values
+                      )}
                     </div>
-                    <div style={{ overflow:"auto", overflowY:'scroll'}}>
-                        <div style = {{ height: 300, width: message.msg.payload.fields.cards.listValue.values.length*270}}>
-                            {this.renderCards(message.msg.payload.fields.cards.listValue.values)}
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
+              );
+            
         }
     }
 
@@ -106,27 +136,71 @@ class Chatbot extends Component{
         }
     }
 
+    toggleBot() {
+        this.setState({ showBot: !this.state.showBot });
+      }
+
     _handleInputKeyPress(e){
-        if(e.key === "Enter"){
+        if(e.key === "Enter" && e.target.value !== ""){
             this.df_text_query(e.target.value);
             e.target.value = '';
         }
     }
 
     render(){
-        return (
-            <div style = {{ height: 400, width:400, float: 'right'}}>
-                <div id="chatbot" style={{ height:'100%', width : '100%', overflow: 'auto' }}>
-                    <h2>CHATBOT</h2>
-                    {this.renderMessages(this.state.messages)}
-                    <div ref = {(el) =>{ this.messagesEnd = el;}}
-                        style = {{ float: 'left', clear: 'both'}}>
-                    </div>
-                    <input type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} />
-                </div>
+        const { showBot, botName } = this.state;
 
-            </div> 
-        )
+        if(showBot){
+            return (
+                <div style = {{ height: 500, width:320, float: 'right', position: 'absolute',
+                                 bottom: 0, right: 30, zIndex:1000}}>
+                    <nav>
+                        <div id='chatWindow-nav' className = 'nav-wrapper'>
+                        <span>{botName}</span>
+                        <span className="close" style={{float: 'right'}} onClick={this.toggleBot}>x</span>
+                        </div>
+                    </nav>
+    
+                    <div id="chatbot" style={{ height:'375px', width : '100%',
+                                            overflow: 'auto', background: 'white' }}>
+                        {this.renderMessages(this.state.messages)}
+                        <div ref = {(el) =>{ this.messagesEnd = el;}}
+                            style = {{ float: 'left', clear: 'both'}}>
+                        </div>
+                        <input type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress}
+                                style = {{paddingLeft : '1%',
+                                        paddingRight: '1%',
+                                        width: '98%',
+                                        backgroundColor: "white",
+                                        color : "#222222",
+                                        borderTop: '1px solid lightgrey',
+                                        marginBottom: 0
+                                        }}
+                                        placeholder="Type here..." />
+                    </div>
+    
+                </div> 
+            );
+        }else{
+            return (
+                <div
+                  style={{
+                    width: 450,
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    zIndex: 1000
+                  }}
+                >
+                  <nav onClick={this.toggleBot}>
+                    <div id="chatWindow-nav" className="nav-wrapper">
+                      <span>{ botName }</span>
+                    </div>
+                  </nav>
+                </div>
+              );
+        }
+        
     }
 } 
 

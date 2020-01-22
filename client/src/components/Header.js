@@ -4,16 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => (
         <nav>
-            <div className="nav-wrapper">
-                <Link to={'/'} className='brand-logo'>Farook Jintha</Link>
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li>
-                        <Link to = {'/shop'}>Shop</Link>
-                    </li>
-                    <li>
-                        <Link to = {'/about'}>About Us</Link>
-                    </li>
-                </ul>
+            <div className="nav-wrapper" style={{}}>
+                <h1>FJ</h1>
             </div>
         </nav>
     )
