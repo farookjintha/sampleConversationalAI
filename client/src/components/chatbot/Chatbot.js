@@ -153,7 +153,7 @@ class Chatbot extends Component{
         if(showBot){
             return (
                 <div style = {{ height: 500, width:320, float: 'right', position: 'absolute',
-                                 bottom: 0, right: 30, zIndex:1000}}>
+                                 bottom: 20, right: 30, zIndex:1000}}>
                     <nav>
                         <div id='chatWindow-nav' className = 'nav-wrapper'>
                         <span>{botName}</span>
@@ -167,17 +167,18 @@ class Chatbot extends Component{
                         <div ref = {(el) =>{ this.messagesEnd = el;}}
                             style = {{ float: 'left', clear: 'both'}}>
                         </div>
+                    </div>
                         <input type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress}
                                 style = {{paddingLeft : '1%',
                                         paddingRight: '1%',
                                         width: '98%',
-                                        backgroundColor: "white",
+                                        backgroundColor: "lightgrey",
                                         color : "#222222",
                                         borderTop: '1px solid lightgrey',
                                         marginBottom: 0
                                         }}
                                         placeholder="Type here..." />
-                    </div>
+                    
     
                 </div> 
             );
@@ -185,10 +186,10 @@ class Chatbot extends Component{
             return (
                 <div
                   style={{
-                    width: 450,
+                    width: 250,
                     position: "absolute",
                     bottom: 0,
-                    right: 0,
+                    right: 30,
                     zIndex: 1000
                   }}
                 >
