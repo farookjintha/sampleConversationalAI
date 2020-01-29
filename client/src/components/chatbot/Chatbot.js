@@ -152,32 +152,36 @@ class Chatbot extends Component{
 
         if(showBot){
             return (
-                <div style = {{ height: 500, width:320, float: 'right', position: 'absolute',
-                                 bottom: 20, right: 30, zIndex:1000}}>
-                    <nav>
-                        <div id='chatWindow-nav' className = 'nav-wrapper'>
-                        <span>{botName}</span>
+                <div class = 'chat'>
+                {/* // <div class = 'chat' style = {{ height: 500, width:320, position: 'absolute', */}
+                {/* //                  bottom: 20, right: 30, zIndex:1000}}> */}
+                    <div id='chat_header' className = 'nav-wrapper' style={{ height:'55px'}}>
+                        <span style={{ top:'10px'}} >{botName}</span>
                         <span className="close" style={{float: 'right'}} onClick={this.toggleBot}>x</span>
-                        </div>
-                    </nav>
+                    </div>
     
-                    <div id="chatbot" style={{ height:'375px', width : '100%',
+                    <div id="chatbot" style={{ height:'575px', width : '100%',
                                             overflow: 'auto', background: 'white' }}>
                         {this.renderMessages(this.state.messages)}
                         <div ref = {(el) =>{ this.messagesEnd = el;}}
                             style = {{ float: 'left', clear: 'both'}}>
                         </div>
                     </div>
-                        <input type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress}
-                                style = {{paddingLeft : '1%',
-                                        paddingRight: '1%',
-                                        width: '98%',
-                                        backgroundColor: "lightgrey",
-                                        color : "#222222",
-                                        borderTop: '1px solid lightgrey',
-                                        marginBottom: 0
-                                        }}
+
+
+                    <div class = 'chatbot-form'>
+                    <textarea type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress}
+                                // style = {{paddingLeft : '1%',
+                                //         paddingRight: '1%',
+                                //         width: '98%',
+                                //         backgroundColor: "lightgrey",
+                                //         color : "#222222",
+                                //         borderTop: '1px solid lightgrey',
+                                //         marginBottom: 0
+                                //         }}
                                         placeholder="Type here..." />
+                    </div>
+                        
                     
     
                 </div> 
