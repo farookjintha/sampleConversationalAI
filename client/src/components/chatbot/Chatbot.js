@@ -160,7 +160,7 @@ class Chatbot extends Component{
                         <span className="close" style={{float: 'right'}} onClick={this.toggleBot}>x</span>
                     </div>
     
-                    <div id="chatbot" style={{ height:'575px', width : '100%',
+                    <div id="chatbot" style={{ height:'375px', width : '100%',
                                             overflow: 'auto', background: 'white' }}>
                         {this.renderMessages(this.state.messages)}
                         <div ref = {(el) =>{ this.messagesEnd = el;}}
