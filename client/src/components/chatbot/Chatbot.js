@@ -152,7 +152,7 @@ class Chatbot extends Component{
 
         if(showBot){
             return (
-                <div class = 'chat'>
+                <div className = 'chat'>
                 {/* // <div class = 'chat' style = {{ height: 500, width:320, position: 'absolute', */}
                 {/* //                  bottom: 20, right: 30, zIndex:1000}}> */}
                     <div id='chat_header' className = 'nav-wrapper' style={{ height:'55px'}}>
@@ -169,7 +169,7 @@ class Chatbot extends Component{
                     </div>
 
 
-                    <div class = 'chatbot-form'>
+                    <div className = 'chatbot-form'>
                     <textarea type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress}
                                 // style = {{paddingLeft : '1%',
                                 //         paddingRight: '1%',
