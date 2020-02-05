@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -26,6 +28,12 @@ body {
 	letter-spacing: 1px;
 } */
 
+/* .chatbot{
+	height:'375px';
+	overflow: 'auto';
+	background: 'white';
+} */
+
 .chat_header {
 	/* margin: 10px; */
   
@@ -48,8 +56,8 @@ body {
 .chat_field.chat_message {
 	height: 40px;
 	resize: none;
-		font-size: 20px;
-	  font-weight: 400;
+	font-size: 20px;
+	font-weight: 400;
   }
 
 .chat_field {
@@ -70,8 +78,8 @@ body {
 
 .chat {
 	position: fixed;
-	right: 85px;
-	bottom: 20px;
+	right: 20px;
+	bottom: 80px;
 	width: 400px;
 	font-size: 24px;
 	line-height: 22px;

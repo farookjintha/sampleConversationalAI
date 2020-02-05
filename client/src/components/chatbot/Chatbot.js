@@ -153,7 +153,7 @@ class Chatbot extends Component{
 
         if(showBot){
             return (
-                <div class = 'chat'>
+                <div className = 'chat'>
                 {/* // <div class = 'chat' style = {{ height: 500, width:320, position: 'absolute', */}
                 {/* //                  bottom: 20, right: 30, zIndex:1000}}> */}
                     <div className = 'nav-wrapper chat_header' style={{ height:'55px'}}>
@@ -161,7 +161,7 @@ class Chatbot extends Component{
                         <span className="close" style={{float: 'right'}} onClick={this.toggleBot}>x</span>
                     </div>
     
-                    <div id="chatbot" style={{ height:'375px', width : '100%',
+                    <div className="chatbot" style={{ height:'375px', width : '100%',
                                             overflow: 'auto', background: 'white' }}>
                         {this.renderMessages(this.state.messages)}
                         <div ref = {(el) =>{ this.messagesEnd = el;}}
