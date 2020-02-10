@@ -6,8 +6,6 @@ import {v4 as uuid} from 'uuid';
 import Message from './Message';
 import Card from './Card';
 
-
-
 const cookies = new Cookies();
 
 
@@ -32,6 +30,7 @@ class Chatbot extends Component{
 
         this.toggleBot = this.toggleBot.bind(this);
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
+        this._handleSubmitButton = this._handleSubmitButton.bind(this);
 
     }
     
@@ -143,10 +142,19 @@ class Chatbot extends Component{
       }
 
     _handleInputKeyPress(e){
+      
         if(e.key === "Enter" && e.target.value !== ""){
             this.df_text_query(e.target.value);
             e.target.value = '';
+            e.preventDefault();
         }
+    }
+
+    _handleSubmitButton(e) {
+      this.df_text_query(e.target.value);
+      e.target.value = '';
+      e.preventDefault();
+      
     }
 
     render(){
@@ -159,7 +167,7 @@ class Chatbot extends Component{
                 {/* //                  bottom: 20, right: 30, zIndex:1000}}> */}
                     <div id='chat_header' className = 'nav-wrapper' style={{ height:'55px'}}>
                         <span id = 'bot_name' style={{ top:'10px'}} >{botName}</span>
-                        <span className="close" onClick={this.toggleBot}></span>
+                        <span className="close" style={{float: 'right'}} onClick={this.toggleBot}></span>
                     </div>
     
                     <div id="chatbot" style={{ height:'375px', width : '100%',
@@ -171,9 +179,9 @@ class Chatbot extends Component{
                     </div>
 
 
-                    <div className="fab_field">
-                      <a id="fab_send" className="fab"><i className="zmdi zmdi-mail-send"></i></a>
-                      <textarea id="chatSend" name="chat_message" ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
+                    <div className="fab_field"  >
+                      <a id="fab_send" className="fab" onClick = {this._handleSubmitButton} ><i className="zmdi zmdi-mail-send"></i></a>
+                      <textarea id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
                                 placeholder="Type here..." 
                                 className="chat_field chat_message"></textarea>
                     </div>
@@ -188,13 +196,8 @@ class Chatbot extends Component{
                                 //         borderTop: '1px solid lightgrey',
                                 //         marginBottom: 0
                                 //         }}
-<<<<<<< HEAD
                                         placeholder="Type here..." />
                     </div> */}
-=======
-                                        placeholder="Type here..."  className = "chat_field chat_message"/>
-                    </div>
->>>>>>> 68f8ba694f9354241ed1d0d7bf79c29ac5bae4a0
                         
                     
     
