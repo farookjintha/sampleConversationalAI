@@ -6,6 +6,8 @@ import {v4 as uuid} from 'uuid';
 import Message from './Message';
 import Card from './Card';
 
+
+
 const cookies = new Cookies();
 
 
@@ -157,7 +159,7 @@ class Chatbot extends Component{
                 {/* //                  bottom: 20, right: 30, zIndex:1000}}> */}
                     <div id='chat_header' className = 'nav-wrapper' style={{ height:'55px'}}>
                         <span id = 'bot_name' style={{ top:'10px'}} >{botName}</span>
-                        <span className="close" style={{float: 'right'}} onClick={this.toggleBot}>x</span>
+                        <span className="close" onClick={this.toggleBot}></span>
                     </div>
     
                     <div id="chatbot" style={{ height:'375px', width : '100%',
@@ -186,8 +188,13 @@ class Chatbot extends Component{
                                 //         borderTop: '1px solid lightgrey',
                                 //         marginBottom: 0
                                 //         }}
+<<<<<<< HEAD
                                         placeholder="Type here..." />
                     </div> */}
+=======
+                                        placeholder="Type here..."  className = "chat_field chat_message"/>
+                    </div>
+>>>>>>> 68f8ba694f9354241ed1d0d7bf79c29ac5bae4a0
                         
                     
     
