@@ -169,7 +169,14 @@ class Chatbot extends Component{
                     </div>
 
 
-                    <div className = 'chatbot-form'>
+                    <div className="fab_field">
+                      <a id="fab_send" className="fab"><i className="zmdi zmdi-mail-send"></i></a>
+                      <textarea id="chatSend" name="chat_message" ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
+                                placeholder="Type here..." 
+                                className="chat_field chat_message"></textarea>
+                    </div>
+
+                    {/* <div className = 'chatbot-form'>
                     <textarea type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress}
                                 // style = {{paddingLeft : '1%',
                                 //         paddingRight: '1%',
@@ -180,7 +187,7 @@ class Chatbot extends Component{
                                 //         marginBottom: 0
                                 //         }}
                                         placeholder="Type here..." />
-                    </div>
+                    </div> */}
                         
                     
     

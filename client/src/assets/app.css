@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-
+@import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css);
 
 * {
 	margin: 0;
@@ -105,3 +105,87 @@ body {
 	background-color: #4395e2;
 }
 
+
+.fab_field {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	background: #fff;
+	border-top: 1px solid #eee;
+	border-bottom-right-radius: 10px;
+	  border-bottom-left-radius: 10px;
+  
+  }
+
+  .fab_field2 {
+    bottom: 0px;
+    position: absolute;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+        z-index: 999;
+  }
+
+  .fab_field a {
+	display: inline-block;
+	text-align: center;
+  }
+
+  #fab_send {
+	float: right;
+	background: rgba(0, 0, 0, 0);
+  }
+
+  .fab_field .fab {
+	width: 35px;
+	height: 35px;
+	box-shadow: none;
+	margin: 5px;
+  }
+
+  .fab_field .fab>i {
+	font-size: 1.6em;
+	line-height: 35px;
+	color: #bbb;
+  }
+
+  .fab_field .fab>i:hover {
+	color: #42a5f5;
+  }
+
+
+
+  .chat_field {
+	position: relative;
+	margin: 5px 0 5px 0;
+	width: 80%;
+	font-family: 'Roboto';
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: 500;
+	color: #4b4b4b;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	border: none;
+	outline: none;
+	display: inline-block;
+  }
+
+  .chat_field.chat_message {
+	height: 30px;
+	resize: none;
+		font-size: 13px;
+	  font-weight: 400;
+  }
+
+  .blue .fab {
+	background: #42a5f5;
+	color: #fff;
+  }
+  
+  
+  
+  .blue .chat {
+	background: #42a5f5;
+	color: #999;
+  }
+  
