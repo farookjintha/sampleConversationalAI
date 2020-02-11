@@ -47,7 +47,7 @@ body {
 
 .chat {
 	position: fixed;
-	right: 85px;
+	right: 45px;
 	bottom: 20px;
 	width: 400px;
 	font-size: 24px;
@@ -222,3 +222,52 @@ body {
 	color: #999;
   }
   
+
+
+
+  .fab {
+	display: block;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	text-align: center;
+	color: #999;
+	margin: 340px -150px 0;
+	float: right;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+	cursor: pointer;
+	-webkit-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+	position: relative;
+	z-index: 998;
+	overflow: hidden;
+	background: #0a0a0a;
+	-webkit-transition-delay: 25ms;
+	transition-delay: 25ms;
+  }
+
+
+  .fab > i {
+	font-size: 2em;
+	line-height: 55px;
+	-webkit-transition: all .2s ease-out;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  }
+
+
+
+  ::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+	border-radius: 0;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	margin: 2px;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.2);
+  }
+

@@ -206,19 +206,23 @@ class Chatbot extends Component{
         }else{
             return (
                 <div
-                  style={{
-                    width: 250,
-                    position: "absolute",
-                    bottom: 0,
-                    right: 30,
-                    zIndex: 1000
-                  }}
+                  // style={{
+                  //   width: 250,
+                  //   position: "absolute",
+                  //   bottom: 0,
+                  //   right: 30,
+                  //   zIndex: 1000
+                  // }}
                 >
-                  <nav onClick={this.toggleBot}>
+                  {/* <nav onClick={this.toggleBot}>
                     <div id="chatWindow-nav" className="nav-wrapper">
                       <span>{ botName }</span>
                     </div>
-                  </nav>
+                  </nav> */}
+
+                  <a id="prime" class="fab" onClick={this.toggleBot}>
+                    <i class="prime zmdi zmdi-comment-outline"></i>
+                  </a>
                 </div>
               );
         }
