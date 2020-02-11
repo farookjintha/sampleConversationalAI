@@ -166,8 +166,12 @@ class Chatbot extends Component{
                 {/* // <div class = 'chat' style = {{ height: 500, width:320, position: 'absolute', */}
                 {/* //                  bottom: 20, right: 30, zIndex:1000}}> */}
                     <div id='chat_header' className = 'nav-wrapper' style={{ height:'55px'}}>
-                        <span id = 'bot_name' style={{ top:'10px'}} >{botName}</span>
-                        <span className="close" style={{float: 'right'}} onClick={this.toggleBot}></span>
+                    <div class="chat_option">
+                        <span class="header_img">
+                          </span>
+                          <span id = 'bot_name' style={{ top:'10px'}} >{botName}</span><span class="online">(Online)</span>
+                          <span className="close" style={{float: 'right'}} onClick={this.toggleBot}></span><br />
+                       </div>
                     </div>
     
                     <div id="chatbot" style={{ height:'375px', width : '100%',
