@@ -20,7 +20,7 @@ class Chatbot extends Component{
             showBot : false,
             welcomeSent:false,
             messages: [],
-            botName :"Farooqui"
+            botInfo :`FJ's Virtual Bot`
         };
         if(cookies.get('userID') === undefined){
             cookies.set('userID', uuid(), {path: '/'});
@@ -159,7 +159,7 @@ class Chatbot extends Component{
     }
 
     render(){
-        const { showBot, botName } = this.state;
+        const { showBot, botInfo } = this.state;
 
         if(showBot){
             return (
@@ -170,7 +170,8 @@ class Chatbot extends Component{
                         <span className="header_img">
                           <img alt = "#" src={require('../../assets/fj.jpg')}/>
                           </span>
-                          <span className = 'bot_name'>{botName}</span><span className="online"> (Online) </span>
+                          <span className = 'bot_info'>{botInfo}</span><br />
+                          {/* <span className="online"> (Online) </span> */}
                           <span className="close" style={{float: 'right'}} onClick={this.toggleBot}></span><br />
                        </div>
                     </div>

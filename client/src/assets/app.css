@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css);
 
+@import url('https://fonts.googleapis.com/css?family=Boogaloo|Carter+One|Josefin+Sans&display=swap');
+
 /* * {
 	margin: 0;
 	padding: 0;
@@ -41,7 +43,7 @@ body {
   /* padding: 40px 8px 50px 10px; */
 /* } */ */
 
-#bot_name{
+.bot_name{
 	font-family: 'Pacifico', cursive;
 }
 
@@ -129,6 +131,7 @@ body {
 	cursor: pointer;
 	float: right;
 	display: block;
+	margin: 0 15px;
 	height: 1rem;
 	width: 1rem;
 	background-image: url('./clear.svg');
@@ -155,7 +158,7 @@ body {
 .chatbubble {
 	max-width: 250px;
 	border-radius: 30px;
-	margin: 12px 1px;
+	margin: 12px 10px;
 	width: inherit;
 	overflow-wrap: break-word;
 	padding: 7px 15px;
@@ -421,7 +424,7 @@ body {
   border-top-right-radius: 0px;
 }
 .chat_header .span {
-	float:right;
+	float:left;
 }
 
 
@@ -442,20 +445,22 @@ body {
 
   .chat_option img {
     border-radius: 50%;
-    width: 55px;
+    width: 65px;
     float: left;
-    margin: -30px 20px 10px 20px;
+    margin: -25px 10px 10px 10px;
     border: 4px solid rgba(0, 0, 0, 0.21);
 }
 
-.change_img img{
-    width: 35px;
+/* .change_img img{
+    width: 55px;
     margin: 0px 20px 0px 20px;
-}
+} */
 
-.chat_option .bot_name {
-	font-size: 12px;
-	  font-weight: 300;
+.chat_option .bot_info {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	margin: 0 5px;
+	
   }
   
 .chat_option .online{
