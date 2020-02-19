@@ -753,7 +753,10 @@ body {
 	  width: 280px;
 	  
 	}
-
+	.chat_option img {
+		width: 65px;
+		float: left;
+	}
 	
   }
   /* SMARTPHONES LANDSCAPE */
