@@ -177,7 +177,7 @@ body {
 	float: left;
 	border-top-left-radius: 0; 
 	background-color: #f1f0f0;
-	color: rgb(31, 32, 105);
+	color: #00203FFF;
 }
 
 .me {
@@ -370,7 +370,7 @@ body {
 	position: relative;
 	z-index: 998;
 	overflow: hidden;
-	background: #42a5f5;
+	background: #00203FFF;
   }
 
   .fab > i {
@@ -381,12 +381,18 @@ body {
 	transition: all .2s ease-in-out;
   }
 
+  .close{
+	background-image: url('./clear.svg');
+	height: 1.2rem;
+	width: 1.2em;
+  }
+
   /* CHATBOT */
 
   .chat {
 	position: fixed;
-	right: 85px;
-	bottom: 20px;
+	right: 15px;
+	bottom: 80px;
 	width: 400px;
 	font-size: 12px;
 	line-height: 22px;
@@ -448,7 +454,7 @@ body {
     width: 65px;
     float: left;
     margin: -25px 10px 10px 10px;
-    border: 4px solid rgba(0, 0, 0, 0.21);
+    border: 4px solid #00203FFF;
 }
 
 /* .change_img img{
@@ -530,7 +536,7 @@ body {
 	width: 100%;
 	display: inline-block;
 	text-align: center;
-	background: rgba(61, 78, 100, 0.979);;
+	background: #00203FFF;
 	border-top: 1px solid #eee;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -641,13 +647,19 @@ body {
   .is-active {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
-	-webkit-transition: all 1s ease-in-out;
-	transition: all 1s ease-in-out;
+	-webkit-transition: all 2s ease-in-out;
+	transition: all 2s ease-in-out;
   }
 
   .is-float {
 	box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
   }
+
+  /* .is-loading {
+	display: block;
+	-webkit-animation: load 1s cubic-bezier(0, .99, 1, 0.6) infinite;
+	animation: load 1s cubic-bezier(0, .99, 1, 0.6) infinite;
+  } */
 
 
   /* SCROLLBAR */
@@ -736,8 +748,11 @@ body {
 /* SMARTPHONES PORTRAIT */
   @media only screen and (min-width: 300px) {
 	.chat {
-	  width: 250px;
+	  width: 280px;
+	  
 	}
+
+	
   }
   /* SMARTPHONES LANDSCAPE */
   

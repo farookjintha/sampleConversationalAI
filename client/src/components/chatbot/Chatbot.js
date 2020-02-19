@@ -186,7 +186,7 @@ class Chatbot extends Component{
                                 className="chat_field chat_message"></textarea>
                     </div>
                   </div>
-                  <a id="prime" className="fab is-active is-float" onClick={this.toggleBot}><i className="prime zmdi zmdi-comment-outline"></i></a>
+                  <a id="prime" className="fab is-active is-float" onClick={this.toggleBot}><i className="prime close"></i></a>
               </div> 
             );
         }else{
