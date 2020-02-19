@@ -2,7 +2,7 @@
 @import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css);
 
 @import url('https://fonts.googleapis.com/css?family=Boogaloo|Carter+One|Josefin+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 /* * {
 	margin: 0;
 	padding: 0;
@@ -390,7 +390,7 @@ body {
 	width: 400px;
 	font-size: 12px;
 	line-height: 22px;
-	font-family: 'Roboto';
+	font-family: 'Raleway', sans-serif;
 	font-weight: 500;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
@@ -408,11 +408,11 @@ body {
   .chat_header {
 	/* margin: 10px; */
   font-size: 13px;
-  font-family: 'Roboto';
+  /* font-family: 'Roboto'; */
   font-weight: 500;
-  color: #f3f3f3;
+  color: #d7ebfc;
   height: 55px;
-  background: #42a5f5;
+  background: #00203FFF;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding-top: 8px;
@@ -505,11 +505,11 @@ body {
 	position: relative;
 	margin: 5px 0 5px 0;
 	width: 50%;
-	font-family: 'Roboto';
+	font-family: 'Raleway', sans-serif;
 	font-size: 12px;
 	line-height: 30px;
 	font-weight: 500;
-	color: #4b4b4b;
+	color: #c4e2ff;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	border: none;
@@ -530,7 +530,7 @@ body {
 	width: 100%;
 	display: inline-block;
 	text-align: center;
-	background: #fff;
+	background: rgba(61, 78, 100, 0.979);;
 	border-top: 1px solid #eee;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -544,7 +544,7 @@ body {
 
   #fab_send {
 	float: right;
-	background: rgba(0, 0, 0, 0);
+	background: rgba(88, 163, 250, 0);
   }
 
   .fab_field .fab {
@@ -557,7 +557,7 @@ body {
   .fab_field .fab>i {
 	font-size: 1.6em;
 	line-height: 45px;
-	color: rgb(99, 89, 89);
+	color: rgb(215, 236, 245);
   }
 
   .fab_field .fab>i:hover {
@@ -566,7 +566,7 @@ body {
 
   .chat_converse {
 	position: relative;
-	background: lightgrey;
+	background: #ADEFD1FF;
 	margin: 0px 0 0px 0;
 	height: 300px;
 	min-height: 0;
