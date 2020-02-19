@@ -172,13 +172,12 @@ class Chatbot extends Component{
                           </span>
                           <span className = 'bot_info'>{botInfo}</span><br />
                           {/* <span className="online"> (Online) </span> */}
-                          <span className="close" style={{float: 'right'}} onClick={this.toggleBot}></span><br />
+                          <span className="info" style={{float: 'right'}} onClick={this.toggleBot}></span><br />
                        </div>
                     </div>
                     <div id = "chat_body chat_converse " className="chat_body chat_login chat_conversion chat_converse">
                         {this.renderMessages(this.state.messages)}
-                        <div ref = {(el) =>{ this.messagesEnd = el;}}>
-                        </div>
+                        <div ref = {(el) =>{ this.messagesEnd = el;}} />
                 </div>
                     <div className="fab_field"  >
                       <a id="fab_send" className="fab" onClick = {this._handleSubmitButton} ><i className="zmdi zmdi-mail-send"></i></a>
