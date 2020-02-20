@@ -550,9 +550,9 @@ body {
 	border-radius: 30px;
 	margin: 5px auto;
 	overflow-wrap: break-word;
-	padding: 7px 15px;
+	padding: 7px 10px;
 	display: inline-block;
-	font-size: 15px;
+	font-size: 12px;
 	word-spacing: 0.3px;
 	color: white;
 	text-align: start;
@@ -617,7 +617,6 @@ body {
 	border-radius: 50%;
 	margin: 5px 5px;
 	float: left;
-	
   }
 
 .chat .chat_converse .chat_bubble {
@@ -634,12 +633,13 @@ body {
 	z-index: 999;
   }
 
+
   /* .chat .chat_converse .chat_msg_item .chat_avatar {
 	position: absolute;
 	top: 0;
   } */
 
-  .chat .chat_converse .chat_bubble .bot:before {
+  /* .chat .chat_converse .chat_bubble .bot:before {
 	content: '';
 	position: absolute;
 	top: 15px;
@@ -647,23 +647,23 @@ body {
 	z-index: 998;
 	border: 6px solid transparent;
 	border-right-color: rgba(255, 255, 255, .4);
-  }
+  } */
   
 
   .is-visible {
 	opacity: 1;
   }
 
-  .is-active {
+  /* .is-active {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 	-webkit-transition: all 1s ease-in-out;
 	transition: all 1s ease-in-out;
-  }
+  } */
 
-  .is-float {
+  /* .is-float {
 	box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
-  }
+  } */
 
 
   .rotate {
