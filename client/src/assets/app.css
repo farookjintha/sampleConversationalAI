@@ -663,6 +663,35 @@ body {
 	box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
   }
 
+
+  .rotate {
+	animation: rotate-keyframes .5s;
+   }
+   
+   @keyframes rotate-keyframes {
+	from {
+	 transform: rotate(0deg);
+	}
+   
+	to {
+	 transform: rotate(90deg);
+	}
+   }
+
+   /* .rotate-back {
+	animation: rotate-keyframes .5s;
+   }
+   
+   @keyframes rotate-keyframes {
+	from {
+	 transform: rotate(0deg);
+	}
+   
+	to {
+	 transform: rotate(-90deg);
+	}
+   } */
+
   /* .is-loading {
 	display: block;
 	-webkit-animation: load 1s cubic-bezier(0, .99, 1, 0.6) infinite;

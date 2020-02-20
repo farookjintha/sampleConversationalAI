@@ -19,6 +19,7 @@ class Chatbot extends Component{
         this.state = {
             showBot : false,
             welcomeSent:false,
+            rotate:false,
             messages: [],
             botInfo :`FJ's Virtual Bot`
         };
@@ -138,7 +139,10 @@ class Chatbot extends Component{
     }
 
     toggleBot() {
-        this.setState({ showBot: !this.state.showBot });
+        this.setState({ 
+          showBot: !this.state.showBot,
+          rotate: !this.state.rotate
+         });
       }
 
     
@@ -165,6 +169,8 @@ class Chatbot extends Component{
         const { showBot, botInfo } = this.state;
 
         if(showBot){
+          const {rotate} = this.state;
+
             return (
               <div className = 'fabs'>
                 <div className = 'chat is-visible'>
@@ -190,7 +196,7 @@ class Chatbot extends Component{
                                 className="chat_field chat_message"></textarea>
                     </div>
                   </div>
-                  <a id="prime" className="fab is-float is-visible" onClick={this.toggleBot}><i className="prime zmdi zmdi-close is-active is-visible"></i></a>
+                  <a id="prime" className="fab is-float is-visible" onClick={this.toggleBot}><i className={`prime zmdi zmdi-close is-active is-visible rotate`}></i></a>
               </div> 
             );
         }else{
