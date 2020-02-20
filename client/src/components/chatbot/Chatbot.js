@@ -144,7 +144,7 @@ class Chatbot extends Component{
     
     _handleInputKeyPress(e){
       
-        if(e.key === "Enter" && e.target.value !== ""){
+        if(e.key === "Enter" && e.target.value !== ''){
             this.df_text_query(e.target.value);
             e.target.value = '';
             e.preventDefault();
@@ -152,10 +152,13 @@ class Chatbot extends Component{
     }
 
     _handleSubmitButton(e) {
-      this.df_text_query(e.target.value);
-      e.target.value = '';
-      e.preventDefault();
-      
+
+    //   // this.talkInput.click();
+      if(e.target.value !== ''){
+        this.df_text_query(e.target.value);
+        e.target.value = '';
+        e.preventDefault();
+      }
     }
 
     render(){
@@ -164,7 +167,7 @@ class Chatbot extends Component{
         if(showBot){
             return (
               <div className = 'fabs'>
-                <div className = 'chat'>
+                <div className = 'chat is-visible'>
                     <div className='chat_header'>
                     <div className="chat_option">
                         <span className="header_img">
@@ -180,13 +183,14 @@ class Chatbot extends Component{
                         <div ref = {(el) =>{ this.messagesEnd = el;}} />
                 </div>
                     <div className="fab_field"  >
-                      <a id="fab_send" className="fab" onClick = {this._handleSubmitButton} ><i className="zmdi zmdi-mail-send"></i></a>
+                      <a id="fab_send" className="fab"><i className="zmdi zmdi-mail-send" ref = {(input) => { this.talkInput = input; }} 
+                      onChange = {this._handleSubmitButton}></i></a>
                       <textarea id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
                                 placeholder="Type here..." 
                                 className="chat_field chat_message"></textarea>
                     </div>
                   </div>
-                  <a id="prime" className="fab is-active is-float" onClick={this.toggleBot}><i className="prime close"></i></a>
+                  <a id="prime" className="fab is-float is-visible" onClick={this.toggleBot}><i className="prime zmdi zmdi-close is-active is-visible"></i></a>
               </div> 
             );
         }else{

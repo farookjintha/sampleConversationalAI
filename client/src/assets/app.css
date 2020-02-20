@@ -64,14 +64,6 @@ body {
 	transition: all .2s ease-in-out;
   } */
 
-/* .chat.is-visible {
-	opacity: 1;
-	-webkit-animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
-	animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
-  }
-  .is-hide{
-	opacity: 0
-  } */
 
   /* .chat_option {
 	float: left;
@@ -550,6 +542,16 @@ body {
 	text-align: center;
   }
 
+  .fab_field textarea{
+	width:100%;
+	overflow-y: scroll;
+	overflow:auto;
+	border:1px solid rgb(97, 117, 139);
+	border-radius:3px;
+	line-height:1.5;
+	font-smoothing:subpixel-antialiased;
+  }
+
   #fab_send {
 	float: right;
 	background: rgba(88, 163, 250, 0);
@@ -644,13 +646,17 @@ body {
 	border: 6px solid transparent;
 	border-right-color: rgba(255, 255, 255, .4);
   }
+  
 
+  .is-visible {
+	opacity: 1;
+  }
 
   .is-active {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
-	-webkit-transition: all 2s ease-in-out;
-	transition: all 2s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
   }
 
   .is-float {
