@@ -6,7 +6,7 @@ const Message = (props) => {
           {props.speaks === 'bot' ? <img src={require('../../assets/fj.jpg')}/> : ""}
           </span>
       <div className={`chatbubble ${props.speaks === "bot" ? "bot " : "me"}`}>
-                  <span>{props.text}</span><br/>
+                  <span>{props.text}</span>
       </div>
   </div>
 )};

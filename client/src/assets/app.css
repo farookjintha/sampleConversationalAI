@@ -147,37 +147,7 @@ body {
 }    */
 
 
-.chatbubble {
-	max-width: 250px;
-	border-radius: 30px;
-	margin: 3px 10px;
-	width: inherit;
-	overflow-wrap: break-word;
-	padding: 7px 15px;
-	display: inline-block;
-	font-size: 15px;
-	word-spacing: 0.3px;
-	color: white;
-	text-align: start;
-}
 
-/* .chatbot-form{
-	border: none;
-} */
-
-.bot {
-	float: left;
-	border-top-left-radius: 0; 
-	background-color:#00203FFF;
-	/* background-color: #f1f0f0; */
-	color: #f1f0f0;
-}
-
-.me {
-	border-top-right-radius: 0;
-	color:#00203FFF;
-	background-color: #4395e2;
-}
 
 
 /* .fab_field {
@@ -574,6 +544,38 @@ body {
 	color: #42a5f5;
   }
 
+
+  .chatbubble {
+	max-width: 250px;
+	border-radius: 30px;
+	margin: 5px auto;
+	overflow-wrap: break-word;
+	padding: 7px 15px;
+	display: inline-block;
+	font-size: 15px;
+	word-spacing: 0.3px;
+	color: white;
+	text-align: start;
+}
+
+/* .chatbot-form{
+	border: none;
+} */
+
+.bot {
+	float: left;
+	border-top-left-radius: 0; 
+	background-color:#00203FFF;
+	/* background-color: #f1f0f0; */
+	color: #f1f0f0;
+}
+
+.me {
+	border-top-right-radius: 0;
+	color:#00203FFF;
+	background-color: #4395e2;
+}
+
   .chat_converse {
 	position: relative;
 	background: #ADEFD1FF;
@@ -600,12 +602,12 @@ body {
   
   .chat .chat_converse .chat_bubble .bot .chat_avatar {
 	left: -52px;
-	background: rgba(0, 0, 0, 0.03);
+	/* background: rgba(0, 0, 0, 0.03); */
   }
   
   .chat .chat_converse .chat_bubble .me .chat_avatar {
 	right: -52px;
-	background: rgba(0, 0, 0, 0.6);
+	/* background: rgba(0, 0, 0, 0.6); */
   }
   
   .chat .chat_converse .chat_bubble .chat_avatar, .chat_avatar img{
@@ -613,7 +615,7 @@ body {
 	height: 30px;
 	text-align: center;
 	border-radius: 50%;
-	margin: 12px 5px;
+	margin: 5px 5px;
 	float: left;
 	
   }
@@ -792,6 +794,14 @@ body {
 		width: 65px;
 		float: left;
 	}
+
+	.chat_bubble{
+		margin: 5px auto;
+	}
+	.chat_avatar img{
+		margin: 5px 5px;
+	}
+	
 	
   }
   /* SMARTPHONES LANDSCAPE */
