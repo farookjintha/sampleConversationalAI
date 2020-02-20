@@ -109,12 +109,12 @@ class Chatbot extends Component{
                 <div key={i}>
                   <div className="container">
                     <div
-                      style={{
-                        height: 200,
-                        width:
-                          message.message.payload.fields.cards.listValue.values.length * 150,
-                        paddingLeft: '12%'
-                      }}
+                      // style={{
+                      //   height: 200,
+                      //   width:
+                      //     message.message.payload.fields.cards.listValue.values.length * 150,
+                      //   paddingLeft: '12%'
+                      // }}
                     >
                       {this.renderCards(
                         message.message.payload.fields.cards.listValue.values
