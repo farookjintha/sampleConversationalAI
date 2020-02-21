@@ -571,6 +571,7 @@ body {
 }
 
 .me {
+	margin: 5px 5px;
 	border-top-right-radius: 0;
 	color:#00203FFF;
 	background-color: #4395e2;
