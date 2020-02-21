@@ -140,14 +140,13 @@ class Chatbot extends Component{
 
     toggleBot() {
         this.setState({ 
-          showBot: !this.state.showBot,
-          rotate: !this.state.rotate
+          showBot: !this.state.showBot
+          // rotate: !this.state.rotate
          });
       }
 
     
     _handleInputKeyPress(e){
-      
         if(e.key === "Enter" && e.target.value !== ''){
             this.df_text_query(e.target.value);
             e.target.value = '';
@@ -161,13 +160,12 @@ class Chatbot extends Component{
         e.target.value = '';
         e.preventDefault();
     }
+    
 
     render(){
         const { showBot, botInfo } = this.state;
 
         if(showBot){
-          const {rotate} = this.state;
-
             return (
               <div className = 'fabs'>
                 <div className = 'chat is-visible'>
@@ -185,13 +183,16 @@ class Chatbot extends Component{
                         {this.renderMessages(this.state.messages)}
                         <div ref = {(el) =>{ this.messagesEnd = el;}} />
                 </div>
-                    <div className="fab_field"  >
-                      <div className="fab fab_send"><div className="zmdi zmdi-mail-send" ref = {(input) => { this.talkInput = input; }} 
+                    <form className="fab_field">
+                      
+                      <div className="fab fab_send"><div className="zmdi zmdi-mail-send" ref = {(input) => { this.talkInput = input; }}
                       onClick = {this._handleSubmitButton}></div></div>
-                      <textarea id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
+                      <input id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
                                 placeholder="Type here..." 
-                                className="chat_field chat_message"></textarea>
-                    </div>
+                                className="chat_field chat_message"></input>
+                    
+                    
+                    </form>
                   </div>
                   <a id="prime" className="fab is-float is-visible" onClick={this.toggleBot}><i className={`prime zmdi zmdi-close is-active is-visible rotate`}></i></a>
               </div> 
