@@ -184,12 +184,11 @@ class Chatbot extends Component{
                         <div ref = {(el) =>{ this.messagesEnd = el;}} />
                 </div>
                     <form className="fab_field">
-                      
+                      <input id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
+                                placeholder="Type here..." autoComplete="off"
+                                className="chat_field chat_message"></input>
                       <div className="fab fab_send"><div className="zmdi zmdi-mail-send" ref = {(input) => { this.talkInput = input; }}
                       onClick = {this._handleSubmitButton}></div></div>
-                      <input id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
-                                placeholder="Type here..." 
-                                className="chat_field chat_message"></input>
                     
                     
                     </form>

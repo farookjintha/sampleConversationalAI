@@ -507,10 +507,7 @@ body {
   
   }
 
-  .fab_field a {
-	display: inline-block;
-	text-align: center;
-  }
+  
 
   .fab_field textarea{
 	width:100%;
@@ -523,10 +520,13 @@ body {
   }
 
   .fab_send {
+	display: inline-block;
+	text-align: center;
+	border:none;
 	float: right;
 	/* background: rgba(88, 163, 250, 0); */
 	font-size: 1.6em;
-	line-height: 45px;
+	line-height: 40px;
 	color: rgb(215, 236, 245);
   }
 
