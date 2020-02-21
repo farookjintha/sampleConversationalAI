@@ -543,7 +543,7 @@ body {
 
 
   .chatbubble {
-	max-width: 250px;
+	max-width: 200px;
 	border-radius: 30px;
 	margin: 5px auto;
 	overflow-wrap: break-word;
@@ -594,8 +594,8 @@ body {
 }
 
 .chat .chat_converse .chat_bubble .chat_avatar {
-	position: absolute;
-	top: 0;
+	position: relative;
+	
   }
   
   .chat .chat_converse .chat_bubble .bot .chat_avatar {
@@ -603,12 +603,13 @@ body {
 	/* background: rgba(0, 0, 0, 0.03); */
   }
   
-  .chat .chat_converse .chat_bubble .me .chat_avatar {
+  .chat .chat_converse .chat_bubble .me  {
 	right: -52px;
+	top: 10px;
 	/* background: rgba(0, 0, 0, 0.6); */
   }
   
-  .chat .chat_converse .chat_bubble .chat_avatar, .chat_avatar img{
+  .chat_avatar img{
 	width: 30px;
 	height: 30px;
 	text-align: center;
@@ -617,9 +618,9 @@ body {
 	float: left;
   }
 
-.chat .chat_converse .chat_bubble {
+/* .chat .chat_converse .chat_bubble {
 	position: relative;
-	margin: 8px 0 15px 0;
+	margin: 8px auto;
 	padding: 8px 10px;
 	max-width: 60%;
 	display: block;
@@ -629,7 +630,7 @@ body {
 	animation: zoomIn .5s cubic-bezier(.42, 0, .58, 1);
 	clear: both;
 	z-index: 999;
-  }
+  } */
 
 
   /* .chat .chat_converse .chat_msg_item .chat_avatar {
