@@ -522,9 +522,12 @@ body {
 	font-smoothing:subpixel-antialiased;
   }
 
-  #fab_send {
+  .fab_send {
 	float: right;
-	background: rgba(88, 163, 250, 0);
+	/* background: rgba(88, 163, 250, 0); */
+	font-size: 1.6em;
+	line-height: 45px;
+	color: rgb(215, 236, 245);
   }
 
   .fab_field .fab {
@@ -534,13 +537,7 @@ body {
 	margin: 0 auto;
   }
 
-  .fab_field .fab>i {
-	font-size: 1.6em;
-	line-height: 45px;
-	color: rgb(215, 236, 245);
-  }
-
-  .fab_field .fab>i:hover {
+  .fab_send:hover {
 	color: #42a5f5;
   }
 

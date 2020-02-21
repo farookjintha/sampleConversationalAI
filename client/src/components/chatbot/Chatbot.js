@@ -155,14 +155,11 @@ class Chatbot extends Component{
         }
     }
 
-    _handleSubmitButton(e) {
-
-    //   // this.talkInput.click();
-      if(e.target.value !== ''){
+    _handleSubmitButton(e){
+      console.log("Send Button is Pressed!!");
         this.df_text_query(e.target.value);
         e.target.value = '';
         e.preventDefault();
-      }
     }
 
     render(){
@@ -189,8 +186,8 @@ class Chatbot extends Component{
                         <div ref = {(el) =>{ this.messagesEnd = el;}} />
                 </div>
                     <div className="fab_field"  >
-                      <a id="fab_send" className="fab"><i className="zmdi zmdi-mail-send" ref = {(input) => { this.talkInput = input; }} 
-                      onChange = {this._handleSubmitButton}></i></a>
+                      <div className="fab fab_send"><div className="zmdi zmdi-mail-send" ref = {(input) => { this.talkInput = input; }} 
+                      onClick = {this._handleSubmitButton}></div></div>
                       <textarea id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
                                 placeholder="Type here..." 
                                 className="chat_field chat_message"></textarea>
@@ -203,7 +200,7 @@ class Chatbot extends Component{
             return (
                 <div className = 'fabs'>
                   <a id="prime" className = 'fab' onClick={this.toggleBot}>
-                    <i class="prime zmdi zmdi-comment-outline"></i>
+                    <i className="prime zmdi zmdi-comment-outline"></i>
                   </a>
                 </div>
               );
