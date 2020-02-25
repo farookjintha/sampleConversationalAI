@@ -246,7 +246,8 @@
 }
 
 .bot {
-	float: left;
+	float: 'left';
+	clear: 'both';
 	border-top-left-radius: 0; 
 	background-color:#00203FFF;
 	/* background-color: #f1f0f0; */
@@ -255,6 +256,7 @@
 
 .me {
 	margin: 5px 5px;
+	clear: 'both';
 	border-top-right-radius: 0;
 	color:#00203FFF;
 	background-color: #4395e2;
@@ -274,36 +276,16 @@
 	padding-bottom: 100px;
 }
 
-
-.chat .chat_converse .chat_bubble .chat_avatar {
-	position: relative;
-  }
-  
-  .chat .chat_converse .chat_bubble .bot .chat_avatar {
-	left: -52px;
-	/* background: rgba(0, 0, 0, 0.03); */
-  }
-  
-  .chat .chat_converse .chat_bubble .me  {
-	right: -52px;
-	top: 10px;
-	/* background: rgba(0, 0, 0, 0.6); */
-  }
-  
-  .chat_avatar img{
+.chat_avatar img{
+	
 	width: 30px;
 	height: 30px;
 	text-align: center;
 	border-radius: 50%;
 	margin: 5px 5px;
 	float: left;
-  }
+}
 
-
-
-  .is-visible {
-	opacity: 1;
-  }
 
 
   .rotate {
