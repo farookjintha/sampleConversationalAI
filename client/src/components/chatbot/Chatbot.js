@@ -189,9 +189,9 @@ class Chatbot extends Component{
                           <span className="info" style={{float: 'right'}} onClick={this.toggleBot}></span><br />
                        </div>
                     </div>
-                    <div id = "chat_body chat_converse " className="chat_body chat_login chat_conversion chat_converse">
+                    <div  className="chat_converse">
                         {this.renderMessages(this.state.messages)}
-                        <div ref = {(el) =>{ this.messagesEnd = el;}} />
+                        <div ref = {(el) =>{ this.messagesEnd = el;}} style={{ float: "left", clear: "both" }} />
                 </div>
                     <form className="fab_field">
                       <input id="chatSend" name="chat_message" value = {this.state.inputValue} onKeyPress = {this._handleInputKeyPress}  onChange={this._handleInputChange}
