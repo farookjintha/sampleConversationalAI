@@ -169,8 +169,6 @@ class Chatbot extends Component{
         this.df_text_query(this.state.inputValue);
         this.state.inputValue = '';
       }
-      
-        
     }
     
 
