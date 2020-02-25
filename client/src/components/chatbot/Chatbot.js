@@ -21,6 +21,7 @@ class Chatbot extends Component{
             welcomeSent:false,
             rotate:false,
             messages: [],
+            inputValue:'',
             botInfo :`FJ's Virtual Bot`
         };
         if(cookies.get('userID') === undefined){
@@ -32,6 +33,7 @@ class Chatbot extends Component{
         this.toggleBot = this.toggleBot.bind(this);
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
         this._handleSubmitButton = this._handleSubmitButton.bind(this);
+        this._handleInputChange = this._handleInputChange.bind(this);
 
     }
     
@@ -145,20 +147,30 @@ class Chatbot extends Component{
          });
       }
 
-    
+    _handleInputChange(e){
+      this.setState({inputValue: e.target.value});
+      }
+
+
     _handleInputKeyPress(e){
+      
         if(e.key === "Enter" && e.target.value !== ''){
+            e.preventDefault();
             this.df_text_query(e.target.value);
             e.target.value = '';
-            e.preventDefault();
+            this.state.inputValue = '';
         }
     }
 
-    _handleSubmitButton(e){
-      console.log("Send Button is Pressed!!");
-        this.df_text_query(e.target.value);
-        e.target.value = '';
-        e.preventDefault();
+    _handleSubmitButton(){
+      // e.preventDefault();
+      if(this.state.inputValue !== ''){
+        console.log(this.state.inputValue);
+        this.df_text_query(this.state.inputValue);
+        this.state.inputValue = '';
+      }
+      
+        
     }
     
 
@@ -184,10 +196,10 @@ class Chatbot extends Component{
                         <div ref = {(el) =>{ this.messagesEnd = el;}} />
                 </div>
                     <form className="fab_field">
-                      <input id="chatSend" name="chat_message"  ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress} 
+                      <input id="chatSend" name="chat_message" value = {this.state.inputValue} onKeyPress = {this._handleInputKeyPress}  onChange={this._handleInputChange}
                                 placeholder="Type here..." autoComplete="off"
-                                className="chat_field chat_message"></input>
-                      <div className="fab fab_send"><div className="zmdi zmdi-mail-send" ref = {(input) => { this.talkInput = input; }}
+                                className="chat_field chat_message" ></input>
+                      <div className="fab fab_send"><div className="zmdi zmdi-mail-send"
                       onClick = {this._handleSubmitButton}></div></div>
                     
                     
