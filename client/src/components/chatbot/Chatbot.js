@@ -5,6 +5,7 @@ import {v4 as uuid} from 'uuid';
 
 import Message from './Message';
 import Card from './Card';
+import Details from './Details';
 
 const cookies = new Cookies();
 
@@ -111,14 +112,7 @@ class Chatbot extends Component{
             return (
                 <div key={i}>
                   <div className="container">
-                    <div
-                      // style={{
-                      //   height: 200,
-                      //   width:
-                      //     message.message.payload.fields.cards.listValue.values.length * 150,
-                      //   paddingLeft: '12%'
-                      // }}
-                    >
+                    <div>
                       {this.renderCards(
                         message.message.payload.fields.cards.listValue.values
                       )}
@@ -146,6 +140,7 @@ class Chatbot extends Component{
           // rotate: !this.state.rotate
          });
       }
+
 
     _handleInputChange(e){
       this.setState({inputValue: e.target.value});
@@ -186,7 +181,9 @@ class Chatbot extends Component{
                           </span>
                           <span className = 'bot_info'>{botInfo}</span><br />
                           {/* <span className="online"> (Online) </span> */}
-                          <span className="info" style={{float: 'right'}} onClick={this.toggleBot}></span><br />
+                          {/* <span className="info" style={{float: 'right'}} onClick = {this.toggleDetails}></span> */}
+                          <Details />
+                          <br />
                        </div>
                     </div>
                     <div  className="chat_converse">

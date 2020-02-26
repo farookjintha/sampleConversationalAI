@@ -16,7 +16,10 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
-
+}
+.hide_icon{
+	background-size: 5px;
+	cursor: pointer;
 }
 
   .fabs {
@@ -25,7 +28,6 @@
 	margin: 1em;
 	right: 0;
 	z-index: 1000;
-	
   }
 
   .fab {
@@ -270,6 +272,25 @@
 	width: 100%;
 	float: right;
 }
+
+.show_details{
+	height: 300px;
+	margin: -3px auto;
+	color: black;
+	background-color:rgb(9, 172, 172);
+	z-index: 1000;
+	-webkit-animation: expand 2s;
+}
+
+@-webkit-keyframes expand{
+    0%{height:0px}
+    100%{height:300px}
+}
+@keyframes expand {
+	0%{height:0px}
+    100%{height:300px}
+}
+
 
 .chat_avatar img{
 	
