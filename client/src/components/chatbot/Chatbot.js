@@ -186,13 +186,7 @@ class Chatbot extends Component{
                           <br />
                        </div>
                     </div>
-<<<<<<< HEAD
-    
-                    <div id="chatbot" style={{ height:'375px', width : '100%',
-                                            overflow: 'auto', background: 'white' }}>
-=======
                     <div  className="chat_converse">
->>>>>>> demo
                         {this.renderMessages(this.state.messages)}
                         <div ref = {(el) =>{ this.messagesEnd = el;}} style={{ float: "left", clear: "both" }} />
                 </div>
