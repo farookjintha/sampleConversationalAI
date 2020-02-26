@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config()
 
-console.log(process.env.NODE_ENV);
+console.log("App running...");
 
 app.use(bodyParser.json());
 
