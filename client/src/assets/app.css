@@ -17,9 +17,14 @@
 	background-position: center;
 	background-size: 100%;
 }
-.hide_icon{
-	background-size: 5px;
+.info_icon{
+	float: right;
+	font-size: 1.2em;
 	cursor: pointer;
+	margin: 0 15px;
+}
+.minus_icon{
+	color:rgb(221, 221, 13);
 }
 
   .fabs {

@@ -22,9 +22,10 @@ export default class Details extends React.Component{
           if(showDetails){
               console.log(showDetails);
               return(<div>
-                <span className="hide_icon zmdi zmdi-minus-circle-outline" 
-                    style={{float: 'right', margin: '0 15px'}}
-                 onClick = {this.toggleDetails}></span>
+                <span className="info_icon minus_icon" 
+                 onClick = {this.toggleDetails}>
+                     <i className = 'zmdi zmdi-minus-circle-outline'></i>
+                 </span>
                  <div className = 'show_details chat_converse'>
                     <p>Summary of the bot</p>
                     </div>
@@ -33,7 +34,10 @@ export default class Details extends React.Component{
           }else{
             console.log(showDetails);
               return(
-                <span className="info" style={{float: 'right'}} onClick = {this.toggleDetails}></span>
+                <span className="info_icon" 
+                 onClick = {this.toggleDetails}>
+                     <i className = 'zmdi zmdi-info-outline'></i>
+                 </span>
               );
           }
       }

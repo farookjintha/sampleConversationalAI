@@ -191,7 +191,7 @@ class Chatbot extends Component{
                         <div ref = {(el) =>{ this.messagesEnd = el;}} style={{ float: "left", clear: "both" }} />
                 </div>
                     <form className="fab_field">
-                      <input id="chatSend" name="chat_message" value = {this.state.inputValue} onKeyPress = {this._handleInputKeyPress}  onChange={this._handleInputChange}
+                      <input id="chatSend" value = {this.state.inputValue} onKeyPress = {this._handleInputKeyPress}  onChange={this._handleInputChange}
                                 placeholder="Type here..." autoComplete="off"
                                 className="chat_field chat_message" ></input>
                       <div className="fab fab_send"><div className="zmdi zmdi-mail-send"
