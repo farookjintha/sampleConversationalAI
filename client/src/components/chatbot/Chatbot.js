@@ -7,6 +7,7 @@ import Message from './Message';
 import Card from './Card';
 import Details from './Details';
 
+
 const cookies = new Cookies();
 
 
