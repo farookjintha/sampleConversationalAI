@@ -5,6 +5,7 @@ import {v4 as uuid} from 'uuid';
 
 import Message from './Message';
 import Card from './Card';
+import Details from './Details';
 
 const cookies = new Cookies();
 
@@ -19,8 +20,10 @@ class Chatbot extends Component{
         this.state = {
             showBot : false,
             welcomeSent:false,
+            rotate:false,
             messages: [],
-            botName :"Farooqui"
+            inputValue:'',
+            botInfo :`FJ's Virtual Bot`
         };
         if(cookies.get('userID') === undefined){
             cookies.set('userID', uuid(), {path: '/'});
@@ -30,6 +33,8 @@ class Chatbot extends Component{
 
         this.toggleBot = this.toggleBot.bind(this);
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
+        this._handleSubmitButton = this._handleSubmitButton.bind(this);
+        this._handleInputChange = this._handleInputChange.bind(this);
 
     }
     
@@ -107,14 +112,7 @@ class Chatbot extends Component{
             return (
                 <div key={i}>
                   <div className="container">
-                    <div
-                      style={{
-                        height: 200,
-                        width:
-                          message.message.payload.fields.cards.listValue.values.length * 150,
-                        paddingLeft: '12%'
-                      }}
-                    >
+                    <div>
                       {this.renderCards(
                         message.message.payload.fields.cards.listValue.values
                       )}
@@ -137,71 +135,86 @@ class Chatbot extends Component{
     }
 
     toggleBot() {
-        this.setState({ showBot: !this.state.showBot });
+        this.setState({ 
+          showBot: !this.state.showBot
+          // rotate: !this.state.rotate
+         });
       }
 
+
+    _handleInputChange(e){
+      this.setState({inputValue: e.target.value});
+      }
+
+
     _handleInputKeyPress(e){
-        if(e.key === "Enter" && e.target.value !== ""){
+      
+        if(e.key === "Enter" && e.target.value !== ''){
+            e.preventDefault();
             this.df_text_query(e.target.value);
             e.target.value = '';
+            this.state.inputValue = '';
         }
     }
 
+    _handleSubmitButton(){
+      // e.preventDefault();
+      if(this.state.inputValue !== ''){
+        console.log(this.state.inputValue);
+        this.df_text_query(this.state.inputValue);
+        this.state.inputValue = '';
+      }
+    }
+    
+
     render(){
-        const { showBot, botName } = this.state;
+        const { showBot, botInfo } = this.state;
 
         if(showBot){
             return (
-                <div class = 'chat'>
-                {/* // <div class = 'chat' style = {{ height: 500, width:320, position: 'absolute', */}
-                {/* //                  bottom: 20, right: 30, zIndex:1000}}> */}
-                    <div id='chat_header' className = 'nav-wrapper' style={{ height:'55px'}}>
-                        <span style={{ top:'10px'}} >{botName}</span>
-                        <span className="close" style={{float: 'right'}} onClick={this.toggleBot}>x</span>
+              <div className = 'fabs'>
+                <div className = 'chat is-visible'>
+                    <div className='chat_header'>
+                    <div className="chat_option">
+                        <span className="header_img">
+                          <img alt = "#" src={require('../../assets/fj.jpg')}/>
+                          </span>
+                          <span className = 'bot_info'>{botInfo}</span><br />
+                          {/* <span className="online"> (Online) </span> */}
+                          {/* <span className="info" style={{float: 'right'}} onClick = {this.toggleDetails}></span> */}
+                          <Details />
+                          <br />
+                       </div>
                     </div>
+<<<<<<< HEAD
     
                     <div id="chatbot" style={{ height:'375px', width : '100%',
                                             overflow: 'auto', background: 'white' }}>
+=======
+                    <div  className="chat_converse">
+>>>>>>> demo
                         {this.renderMessages(this.state.messages)}
-                        <div ref = {(el) =>{ this.messagesEnd = el;}}
-                            style = {{ float: 'left', clear: 'both'}}>
-                        </div>
-                    </div>
-
-
-                    <div class = 'chatbot-form'>
-                    <textarea type = 'text' ref = {(input) => { this.talkInput = input; }} onKeyPress = {this._handleInputKeyPress}
-                                // style = {{paddingLeft : '1%',
-                                //         paddingRight: '1%',
-                                //         width: '98%',
-                                //         backgroundColor: "lightgrey",
-                                //         color : "#222222",
-                                //         borderTop: '1px solid lightgrey',
-                                //         marginBottom: 0
-                                //         }}
-                                        placeholder="Type here..." />
-                    </div>
-                        
+                        <div ref = {(el) =>{ this.messagesEnd = el;}} style={{ float: "left", clear: "both" }} />
+                </div>
+                    <form className="fab_field">
+                      <input id="chatSend" value = {this.state.inputValue} onKeyPress = {this._handleInputKeyPress}  onChange={this._handleInputChange}
+                                placeholder="Type here..." autoComplete="off"
+                                className="chat_field chat_message" ></input>
+                      <div className="fab fab_send"><div className="zmdi zmdi-mail-send"
+                      onClick = {this._handleSubmitButton}></div></div>
                     
-    
-                </div> 
+                    
+                    </form>
+                  </div>
+                  <a id="prime" className="fab is-float is-visible" onClick={this.toggleBot}><i className={`prime zmdi zmdi-close is-active is-visible rotate`}></i></a>
+              </div> 
             );
         }else{
             return (
-                <div
-                  style={{
-                    width: 250,
-                    position: "absolute",
-                    bottom: 0,
-                    right: 30,
-                    zIndex: 1000
-                  }}
-                >
-                  <nav onClick={this.toggleBot}>
-                    <div id="chatWindow-nav" className="nav-wrapper">
-                      <span>{ botName }</span>
-                    </div>
-                  </nav>
+                <div className = 'fabs'>
+                  <a id="prime" className = 'fab' onClick={this.toggleBot}>
+                    <i className="prime zmdi zmdi-comment-outline"></i>
+                  </a>
                 </div>
               );
         }
