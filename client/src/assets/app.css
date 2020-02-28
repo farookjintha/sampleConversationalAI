@@ -1,22 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css);
 
 @import url('https://fonts.googleapis.com/css?family=Boogaloo|Carter+One|Josefin+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 
-.info {
-	cursor: pointer;
-	float: right;
-	display: block;
-	margin: 0 15px;
-	height: 1.2rem;
-	width: 1.2em;
-	background-image: url('./info.svg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100%;
-}
 .info_icon{
 	float: right;
 	font-size: 1.2em;
@@ -60,13 +47,6 @@
 	-webkit-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
   }
-
-  .close{
-	background-image: url('./clear.svg');
-	height: 1.2rem;
-	width: 1.2em;
-  }
-
 
   .chat {
 	position: fixed;

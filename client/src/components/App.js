@@ -11,8 +11,8 @@ const App = () => (
         <div>
             <BrowserRouter>
                 <div className="container">
-                    <Header />
-                    <Route exact path = "/" component = {Landing} />
+                    {/* <Header />
+                    <Route exact path = "/" component = {Landing} /> */}
                     <Chatbot />
                 </div>
             </BrowserRouter>

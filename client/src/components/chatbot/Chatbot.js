@@ -177,7 +177,7 @@ class Chatbot extends Component{
                     <div className='chat_header'>
                     <div className="chat_option">
                         <span className="header_img">
-                          <img alt = "#" src={require('../../assets/fj.jpg')}/>
+                          <img alt = "#" src={require('../../assets/fj.jpg').default}/>
                           </span>
                           <span className = 'bot_info'>{botInfo}</span><br />
                           {/* <span className="online"> (Online) </span> */}
