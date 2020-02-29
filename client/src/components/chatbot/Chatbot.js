@@ -86,7 +86,7 @@ class Chatbot extends Component{
     async componentDidMount(){
         if(!this.state.welcomeSent){
             await this.resolveAfterXSeconds(1.2);
-            this.df_event_query('Welcome');
+            this.df_event_query('initial_message');
             this.setState({ welcomeSent: true});
         }
         
