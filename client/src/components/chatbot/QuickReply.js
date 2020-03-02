@@ -11,12 +11,13 @@ const QuickReply = (props) =>{
             )}>
                 {props.reply.structValue.fields.text.stringValue}</a>
             );
-    }else{
-        return(
-            <a className = 'quick_reply_buttons'>
-                {props.reply.structValue.fields.text.stringValue}</a>
-            );
     }
+    // else{
+    //     return(
+    //         <a className = 'quick_reply_buttons'>
+    //             {props.reply.structValue.fields.text.stringValue}</a>
+    //         );
+    // }
 
     
 };
