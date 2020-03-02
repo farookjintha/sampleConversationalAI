@@ -28,14 +28,15 @@ class QuickReplies extends Component{
 
     render(){
         return(
-            <div className="right-align">
-                <div className="chatbubble me">
-                    <div id = 'quick-replies'>
+            <div className = 'follow-up'>
+                <span className="chatbubble bot">
+                    {/* <div className = 'quick-replies'> */}
                         {this.props.text && <p>{this.props.text.stringValue}</p>}
-                        {this.renderQuickReplies(this.props.payload)}
-                    </div>
-                    
-                </div>
+                    {/* </div> */}
+                </span>
+                <span className = 'button-options'>
+                    {this.renderQuickReplies(this.props.payload)}
+                </span>
             </div>
         )
     };
