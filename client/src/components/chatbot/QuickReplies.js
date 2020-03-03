@@ -6,7 +6,7 @@ class QuickReplies extends Component{
     constructor(props){
         super(props);
         this.state = {
-            showButtons : true
+            showButtons : false
         };
         this._handleClick = this._handleClick.bind(this);
         this._handleButtonChange = this._handleButtonChange.bind(this);
@@ -25,6 +25,9 @@ class QuickReplies extends Component{
     }
 
     renderQuickReply(reply, i){
+        this.setState({ 
+            showButtons: !this.state.showButtons
+            });
         if(this.state.showButtons){
             return <QuickReply key={i} click={this._handleClick} reply = {reply}/>
         }
