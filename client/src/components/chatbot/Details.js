@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 export default class Details extends React.Component{
-    constructor(props, context){
-        super(props, context);
+    constructor(props){
+        super(props);
 
         this.state = {
             showDetails : false
