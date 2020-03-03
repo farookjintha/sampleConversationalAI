@@ -37,6 +37,7 @@ class Chatbot extends Component{
         this._handleSubmitButton = this._handleSubmitButton.bind(this);
         this._handleInputChange = this._handleInputChange.bind(this);
         this._handleQuickReplyPayload = this._handleQuickReplyPayload.bind(this);
+        // this._handleHideButtons = this._handleHideButtons.bind(this);
 
     }
     
@@ -127,7 +128,9 @@ class Chatbot extends Component{
                                key = {i}
                                replyClick = {this._handleQuickReplyPayload}
                                speaks = {message.speaks}
-                               payload = {message.msg.payload.fields.quick_replies.listValue.values} />
+                               payload = {message.msg.payload.fields.quick_replies.listValue.values}
+                              //  afterClick = {this._handleHideButtons} 
+                               />
         }
     }
 
@@ -156,6 +159,11 @@ class Chatbot extends Component{
 
     }
 
+    // _handleHideButtons(quickReplies){
+    //   quickReplies = null;
+    //   console.log("quick replies: "+quickReplies)
+    //   return quickReplies;
+    // }
 
     _handleInputChange(e){
       this.setState({inputValue: e.target.value});
