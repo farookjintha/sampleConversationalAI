@@ -38,6 +38,13 @@ class QuickReplies extends Component{
     //     }
     // }
 
+    resolveAfterXSeconds(time) {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(time);
+          }, time * 1000);
+        });
+      }
     
     
     renderQuickReplies(quickReplies){
@@ -56,6 +63,7 @@ class QuickReplies extends Component{
 
 
     render(){
+        this.resolveAfterXSeconds(2);
         return(
             <div className = 'follow-up'>
                 <span className="chatbubble bot">

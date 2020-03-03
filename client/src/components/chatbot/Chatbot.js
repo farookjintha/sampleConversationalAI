@@ -110,7 +110,8 @@ class Chatbot extends Component{
 
     renderEachMessage(message, i){
         if(message.msg && message.msg.text && message.msg.text.text){
-            return <Message key = {i} speaks = {message.speaks} text = {message.msg.text.text} />;
+          // this.resolveAfterXSeconds(3);
+          return <Message key = {i} speaks = {message.speaks} text = {message.msg.text.text} />;
         }else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.cards){
             return (
                 <div key={i}>
@@ -124,6 +125,7 @@ class Chatbot extends Component{
                 </div>
               );
         }else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.quick_replies){
+          // this.resolveAfterXSeconds(3);
           return <QuickReplies text = {message.msg.payload.fields.text ? message.msg.payload.fields.text : null}
                                key = {i}
                                replyClick = {this._handleQuickReplyPayload}
@@ -154,7 +156,7 @@ class Chatbot extends Component{
     _handleQuickReplyPayload(event, payload, text){
       event.preventDefault();
       event.stopPropagation();
-
+      console.log(text);
       this.df_text_query(text);
 
     }
