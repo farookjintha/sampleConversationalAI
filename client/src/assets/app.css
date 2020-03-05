@@ -165,9 +165,7 @@
   
   }
 
-  #chat_body{
-    height: 450px;
-}
+  
 
 .chat_field {
 	position: relative;
@@ -185,7 +183,7 @@
   }
 
   .chat_field.chat_message {
-	height: 30px;
+	height: 35px;
 	width: 85%;
 	resize: none;
 	font-size: 13px;
@@ -305,7 +303,7 @@
 .chat_converse {
 	position: relative;
 	background: #ADEFD1FF;
-	margin: 0px 0 0px 0;
+	margin: 0px 0 -1px 0;
 	height: 300px;
 	min-height: 0;
 	font-size: 12px;
@@ -316,10 +314,10 @@
 }
 
 .show_details{
-	height: 300px;
+	height: 301px;
 	margin: -3px auto;
-	color: black;
-	background-color:rgb(9, 172, 172);
+	color: rgb(7, 252, 231);
+	background-color:rgb(5, 65, 65);
 	z-index: 1000;
 	-webkit-animation: expand 2s;
 }
