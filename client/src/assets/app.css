@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css?family=Boogaloo|Carter+One|Josefin+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css?family=Inria+Serif|Poiret+One&display=swap');
+
 .info_icon{
 	float: right;
 	font-size: 1.2em;
@@ -297,15 +300,20 @@
 }
 
 .show_details{
+	font-family: 'Poiret One', cursive;
+	padding: 5px 5px;
 	height: 301px;
 	margin: -3px auto;
 	color: rgb(7, 252, 231);
 	background-color:rgb(5, 65, 65);
 	z-index: 1000;
+	scroll-behavior: smooth;
 	-webkit-animation: expand 2s;
 }
 
-.show_details h2{
+#summary-head{
+	text-decoration: underline;
+	font-size: 25px;
 	color: rgb(7, 252, 231);
 }
 
@@ -360,6 +368,7 @@
 	margin: 2px;
 	border-radius: 10px;
 	background: rgba(0, 0, 0, 0.2);
+	
   }
 
   
