@@ -304,8 +304,8 @@
 	padding: 5px 5px;
 	height: 301px;
 	margin: -3px auto;
-	color: rgb(7, 252, 231);
-	background-color:rgb(5, 65, 65);
+	color: rgb(155, 243, 13);
+	background-color:rgba(4, 58, 75, 0.89);
 	z-index: 1000;
 	scroll-behavior: smooth;
 	-webkit-animation: expand 2s;
@@ -314,7 +314,7 @@
 #summary-head{
 	text-decoration: underline;
 	font-size: 25px;
-	color: rgb(7, 252, 231);
+	color: rgb(179, 255, 0);
 }
 
 @-webkit-keyframes expand{

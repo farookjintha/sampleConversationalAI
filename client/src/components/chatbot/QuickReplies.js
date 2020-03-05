@@ -5,32 +5,32 @@ import QuickReply from './QuickReply';
 class QuickReplies extends Component{
     constructor(props){
         super(props);
-        // this.state = {
-        //     showButtons : true
-        // };
+        this.state = {
+            showButtons : true
+        };
         this._handleClick = this._handleClick.bind(this);
-        // this._handleButtonChange = this._handleButtonChange.bind(this);
+        this._handleButtonChange = this._handleButtonChange.bind(this);
     }
 
     _handleClick(event, payload, text){
         this.props.replyClick(event, payload, text);
         
-        // this._handleButtonChange();
+        this._handleButtonChange();
         // console.log('Buttons : '+this.state.showButtons);
     }
 
-    // _handleButtonChange(){
-    //     this.setState({ 
-    //         showButtons: !this.state.showButtons
-    //         });
-    // }
+    _handleButtonChange(){
+        this.setState({ 
+            showButtons: !this.state.showButtons
+            });
+    }
 
     renderQuickReply(reply, i, quickReplies){
         // this.props.afterClick(quickReplies); 
         // quickReplies = this.props.afterClick(quickReplies);
-        // if(this.state.showButtons){
+        if(this.state.showButtons){
             return <QuickReply key={i} click={this._handleClick} reply = {reply}/>
-        // }
+        }
     }
     // componentDidMount(){
     //     if(this.state.showButtons){
@@ -52,6 +52,7 @@ class QuickReplies extends Component{
         // this.props.afterClick(quickReplies);
         if(quickReplies){
             return quickReplies.map((reply, i) => {
+                
                 return this.renderQuickReply(reply, i, quickReplies);
             })
         }else{
