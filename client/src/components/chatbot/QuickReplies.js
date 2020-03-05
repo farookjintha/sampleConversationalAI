@@ -25,9 +25,6 @@ class QuickReplies extends Component{
     }
 
     renderQuickReply(reply, i){
-        this.setState({ 
-            showButtons: !this.state.showButtons
-            });
         if(this.state.showButtons){
             return <QuickReply key={i} click={this._handleClick} reply = {reply}/>
         }
@@ -43,6 +40,9 @@ class QuickReplies extends Component{
     renderQuickReplies(quickReplies){
         if(quickReplies){
             return quickReplies.map((reply, i) => {
+                this.setState({ 
+                    showButtons: !this.state.showButtons
+                    });
                 return this.renderQuickReply(reply, i);
             })
         }else{
