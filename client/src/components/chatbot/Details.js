@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import BotSummary from './BotSummary';
 
 export default class Details extends React.Component{
     constructor(props){
@@ -26,9 +27,10 @@ export default class Details extends React.Component{
                  onClick = {this.toggleDetails}>
                      <i className = 'zmdi zmdi-minus-circle-outline'></i>
                  </span>
-                 <div className = 'show_details chat_converse'>
+                 {/* <div className = 'show_details chat_converse'>
                     <p>Summary of the bot</p>
-                    </div>
+                    </div> */}
+                    <BotSummary />
                     </div>
               );
           }else{
