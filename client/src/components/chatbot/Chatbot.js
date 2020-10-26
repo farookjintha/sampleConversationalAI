@@ -24,6 +24,7 @@ class Chatbot extends Component{
             rotate:false,
             messages: [],
             inputValue:'',
+            recentButtons: false,
             botInfo :`FJ's Virtual Bot`
         };
         if(cookies.get('userID') === undefined){
@@ -37,8 +38,6 @@ class Chatbot extends Component{
         this._handleSubmitButton = this._handleSubmitButton.bind(this);
         this._handleInputChange = this._handleInputChange.bind(this);
         this._handleQuickReplyPayload = this._handleQuickReplyPayload.bind(this);
-        // this._handleHideButtons = this._handleHideButtons.bind(this);
-
     }
     
     async df_text_query(queryText){
@@ -149,9 +148,15 @@ class Chatbot extends Component{
     toggleBot() {
         this.setState({ 
           showBot: !this.state.showBot
-          // rotate: !this.state.rotate
          });
       }
+
+    _handleButtons(){
+      this.setState({
+
+      })
+    }
+
 
     _handleQuickReplyPayload(event, payload, text){
       event.preventDefault();

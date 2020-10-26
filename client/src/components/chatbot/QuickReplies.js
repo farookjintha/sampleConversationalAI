@@ -28,15 +28,10 @@ class QuickReplies extends Component{
     renderQuickReply(reply, i, quickReplies){
         // this.props.afterClick(quickReplies); 
         // quickReplies = this.props.afterClick(quickReplies);
-        if(this.state.showButtons){
+        if(this.state.showButtons && this.states.recentButtons){
             return <QuickReply key={i} click={this._handleClick} reply = {reply}/>
         }
     }
-    // componentDidMount(){
-    //     if(this.state.showButtons){
-    //         this.setState({ showButtons: false});
-    //     }
-    // }
 
     resolveAfterXSeconds(time) {
         return new Promise(resolve => {
