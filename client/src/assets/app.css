@@ -4,6 +4,11 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css?family=Inria+Serif|Poiret+One&display=swap');
+
+>>>>>>> dev
 .info_icon{
 	float: right;
 	font-size: 1.2em;
@@ -48,6 +53,12 @@
 	transition: all .2s ease-in-out;
   }
 
+<<<<<<< HEAD
+=======
+  
+
+
+>>>>>>> dev
   .chat {
 	position: fixed;
 	right: 15px;
@@ -145,9 +156,7 @@
   
   }
 
-  #chat_body{
-    height: 450px;
-}
+  
 
 .chat_field {
 	position: relative;
@@ -165,7 +174,7 @@
   }
 
   .chat_field.chat_message {
-	height: 30px;
+	height: 35px;
 	width: 85%;
 	resize: none;
 	font-size: 13px;
@@ -245,10 +254,47 @@
 	background-color: #4395e2;
 }
 
+.follow-up{
+	margin: 0px 0 0px 41px;
+}
+
+.button-options{
+	margin: 0px 0 0px 10px;
+}
+
+.quick_reply_buttons{
+	display: inline-block;
+	padding: 0.3em 1.2em;
+	margin:0 0.1em 0.1em 0;
+	border:0.1em solid #00203FFF;
+	border-radius:2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Raleway', sans-serif;
+	font-weight:bold;
+	color:#00203FFF;
+	background-color:#4eb5f1;
+	text-align:center;
+	transition: all 0.2s;
+}
+
+.quick_reply_buttons:hover{
+	background-color:#4095c6;
+	color: #00203FFF;
+	cursor: pointer
+	}
+
+@media all and (max-width:30em){
+	.quick_reply_buttons{
+		display:inline-block;
+		margin:0.2em 0.1em;
+	}
+	}
+
 .chat_converse {
 	position: relative;
 	background: #ADEFD1FF;
-	margin: 0px 0 0px 0;
+	margin: 0px 0 -1px 0;
 	height: 300px;
 	min-height: 0;
 	font-size: 12px;
@@ -259,12 +305,21 @@
 }
 
 .show_details{
-	height: 300px;
+	font-family: 'Poiret One', cursive;
+	padding: 5px 5px;
+	height: 301px;
 	margin: -3px auto;
-	color: black;
-	background-color:rgb(9, 172, 172);
+	color: rgb(155, 243, 13);
+	background-color:rgba(4, 58, 75, 0.89);
 	z-index: 1000;
+	scroll-behavior: smooth;
 	-webkit-animation: expand 2s;
+}
+
+#summary-head{
+	text-decoration: underline;
+	font-size: 25px;
+	color: rgb(179, 255, 0);
 }
 
 @-webkit-keyframes expand{
@@ -318,6 +373,7 @@
 	margin: 2px;
 	border-radius: 10px;
 	background: rgba(0, 0, 0, 0.2);
+	
   }
 
   
@@ -455,6 +511,3 @@
   :-moz-placeholder { /* Firefox 4 - 18 */
 	color: #bbb;
   }
-  
-
-  

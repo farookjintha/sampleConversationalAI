@@ -6,6 +6,7 @@ import {v4 as uuid} from 'uuid';
 import Message from './Message';
 import Card from './Card';
 import Details from './Details';
+import QuickReplies from './QuickReplies';
 
 const cookies = new Cookies();
 
@@ -23,6 +24,7 @@ class Chatbot extends Component{
             rotate:false,
             messages: [],
             inputValue:'',
+            recentButtons: false,
             botInfo :`FJ's Virtual Bot`
         };
         if(cookies.get('userID') === undefined){
@@ -35,7 +37,7 @@ class Chatbot extends Component{
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
         this._handleSubmitButton = this._handleSubmitButton.bind(this);
         this._handleInputChange = this._handleInputChange.bind(this);
-
+        this._handleQuickReplyPayload = this._handleQuickReplyPayload.bind(this);
     }
     
     async df_text_query(queryText){
@@ -85,7 +87,7 @@ class Chatbot extends Component{
     async componentDidMount(){
         if(!this.state.welcomeSent){
             await this.resolveAfterXSeconds(1.2);
-            this.df_event_query('Welcome');
+            this.df_event_query('initial_message');
             this.setState({ welcomeSent: true});
         }
         
@@ -107,20 +109,29 @@ class Chatbot extends Component{
 
     renderEachMessage(message, i){
         if(message.msg && message.msg.text && message.msg.text.text){
-            return <Message key = {i} speaks = {message.speaks} text = {message.msg.text.text} />;
+          // this.resolveAfterXSeconds(3);
+          return <Message key = {i} speaks = {message.speaks} text = {message.msg.text.text} />;
         }else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.cards){
             return (
                 <div key={i}>
                   <div className="container">
                     <div>
                       {this.renderCards(
-                        message.message.payload.fields.cards.listValue.values
+                        message.msg.payload.fields.cards.listValue.values
                       )}
                     </div>
                   </div>
                 </div>
               );
-            
+        }else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.quick_replies){
+          // this.resolveAfterXSeconds(3);
+          return <QuickReplies text = {message.msg.payload.fields.text ? message.msg.payload.fields.text : null}
+                               key = {i}
+                               replyClick = {this._handleQuickReplyPayload}
+                               speaks = {message.speaks}
+                               payload = {message.msg.payload.fields.quick_replies.listValue.values}
+                              //  afterClick = {this._handleHideButtons} 
+                               />
         }
     }
 
@@ -137,10 +148,29 @@ class Chatbot extends Component{
     toggleBot() {
         this.setState({ 
           showBot: !this.state.showBot
-          // rotate: !this.state.rotate
          });
       }
 
+    _handleButtons(){
+      this.setState({
+
+      })
+    }
+
+
+    _handleQuickReplyPayload(event, payload, text){
+      event.preventDefault();
+      event.stopPropagation();
+      console.log(text);
+      this.df_text_query(text);
+
+    }
+
+    // _handleHideButtons(quickReplies){
+    //   quickReplies = null;
+    //   console.log("quick replies: "+quickReplies)
+    //   return quickReplies;
+    // }
 
     _handleInputChange(e){
       this.setState({inputValue: e.target.value});
