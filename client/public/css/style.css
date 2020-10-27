@@ -160,7 +160,7 @@ p {
     position: fixed;
     left: 0;
     bottom: 0;
-    line-height: 0.5em;
+    line-height: 0em;
     width: 100%;
     font-family: 'Raleway', sans-serif;
     font-weight: 10;

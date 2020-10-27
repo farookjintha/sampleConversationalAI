@@ -25,7 +25,8 @@ class Chatbot extends Component{
             messages: [],
             inputValue:'',
             recentButtons: false,
-            botInfo :`FJ's Virtual Bot`
+            botInfo :`FJ's Virtual Bot`,
+            isTyping: false
         };
         if(cookies.get('userID') === undefined){
             cookies.set('userID', uuid(), {path: '/'});
